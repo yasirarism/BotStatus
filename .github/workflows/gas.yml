@@ -16,6 +16,7 @@ jobs:
           APP_ID: ${{ secrets.APP_ID }} # APP ID from my.telegram.org
           API_HASH: ${{ secrets.API_HASH }} # API ID from my.telegram.org
           IDS: ${{ secrets.IDS }} # Message IDs to edit.
+          GITHUB_REPOSITORY: ${{ secrets.G_REPO }} # Message IDs to edit.
         id: bot-status
 
       # now you can use the output of status returned as JSON anywhere. 
