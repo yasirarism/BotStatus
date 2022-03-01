@@ -33,19 +33,19 @@ all_mixed_ids = os.getenv('IDS', None) # All Chat IDs along with message IDs (Te
 file_name = os.getenv('FILE_NAME', 'README.md') # filename is case sensitive.
 edit_in_repo = os.getenv('EDIT_IN_REPO', 'true')  # If you want to edit status in GitHub Repo, set it to True else False.
 edit_in_telegram = os.getenv('EDIT_IN_TELEGRAM', 'true') # If you want to edit status in Telegram, set it to True else False
-start_text = "🔰 ᴅʀɪᴠᴇᴄᴏᴋ Bᴏᴛꜱ Sᴛᴀᴛᴜꜱ 🔰\n\n(Aʟʟ Bᴏᴛꜱ Aʀᴇ Cʜᴇᴄᴋᴇᴅ Aᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ. Iꜰ Aɴʏ Cᴏʀʀᴇᴄᴛɪᴏɴ RᴇQᴜɪʀᴇᴅ, Rᴇᴘᴏʀᴛ Iᴛ)\n" # default for start_message.
+start_text = "💠 **ᴅʀɪᴠᴇᴄᴏᴋ Bᴏᴛꜱ Sᴛᴀᴛᴜꜱ**\n" # default for start_message.
 start_message = os.getenv('START_MESSAGE', start_text) # text before the status to show.
-end_text = "**NOTE:** Bᴏᴛꜱ Sᴛᴀᴛᴜꜱ Aʀᴇ Aᴜᴛᴏ-Uᴘᴅᴀᴛᴇᴅ Eᴠᴇʀʏ 2 Hᴏᴜʀꜱ." # default for end_message.
+end_text = "ℹ️ Bᴏᴛꜱ Sᴛᴀᴛᴜꜱ Aʀᴇ Aᴜᴛᴏ-Uᴘᴅᴀᴛᴇᴅ Eᴠᴇʀʏ 2 Hᴏᴜʀꜱ." # default for end_message.
 end_message = os.getenv('END_MESSAGE', end_text) # text after the status to show.
 commit_message = os.getenv('COMMIT_MESSAGE', '✨ auto-updated bot status. ✨') # commit message at status update. Btw, stars looks cool.
 bullet = os.getenv('BULLET', '🤖 Bᴏᴛ...........:') # if you want to get custom bullets in Telegram.
 time_zone = os.getenv('TIME_ZONE', 'Asia/Jakarta') # ISD. You can choose different as per your location.
-time_format = os.getenv('TIME_FORMAT', '%H:%M %d/%m') # Time format, defaults to Hrs:minutes Day/Month. Eg, 9:41 12/9
+time_format = os.getenv('TIME_FORMAT', '%A, %d %B %Y - %H:%M:%S WIB') # Time format, defaults to Hrs:minutes Day/Month. Eg, 9:41 12/9
 current_time = datetime.now(timezone(time_zone)).strftime(time_format) # Time when the script runs.
 up_github = os.getenv('UP_GITHUB', '✔️') # Custom Icon when Bot is up to show in GitHub MarkDown file.
 down_github = os.getenv('DOWN_GITHUB', '❌') # Custom Icon when Bot is down to show in GitHub MarkDown file.
-up_telegram = os.getenv('UP_TELEGRAM', 'Oɴʟɪɴᴇ ☑') # Custom Icon when Bot is up to show in Telegram.
-down_telegram = os.getenv('DOWN_TELEGRAM', 'Offline 🚫') # Custom Icon when Bot is down to show in Telegram.
+up_telegram = os.getenv('UP_TELEGRAM', 'ᴏɴʟɪɴᴇ ☑') # Custom Icon when Bot is up to show in Telegram.
+down_telegram = os.getenv('DOWN_TELEGRAM', 'ᴏꜰꜰʟɪɴᴇ 🚫') # Custom Icon when Bot is down to show in Telegram.
 
 # print some information
 def display():
@@ -95,7 +95,7 @@ async def edit_message(data):
         text = f'{start_message}\n' # I love f-strings and to comment every line :)
         for i in data:
             text += f"{bullet}   [{data[i]['name']}](https://t.me/{i})\n💬 Sᴛᴀᴛᴜꜱ.....:   {up_telegram if data[i]['status'] else down_telegram}\n\n"
-        text += f"\n**📶 Lᴀꜱᴛ Cʜᴇᴄᴋᴇᴅ:** __{current_time} - Asia/Jakarta__\n"
+        text += f"\n**📶 Lᴀꜱᴛ Cʜᴇᴄᴋᴇᴅ:** {current_time} - Asia/Jakarta\n\n"
         text += end_message
         chats_to_edit = get_ids(all_mixed_ids)
         for chat_id, message_id in chats_to_edit:
