@@ -44,8 +44,8 @@ time_format = os.getenv('TIME_FORMAT', '%A, %d %B %Y - %H:%M:%S WIB') # Time for
 current_time = datetime.now(timezone(time_zone)).strftime(time_format) # Time when the script runs.
 up_github = os.getenv('UP_GITHUB', '✅') # Custom Icon when Bot is up to show in GitHub MarkDown file.
 down_github = os.getenv('DOWN_GITHUB', '❌') # Custom Icon when Bot is down to show in GitHub MarkDown file.
-up_telegram = os.getenv('UP_TELEGRAM', 'ᴏɴʟɪɴᴇ ☑') # Custom Icon when Bot is up to show in Telegram.
-down_telegram = os.getenv('DOWN_TELEGRAM', 'ᴏꜰꜰʟɪɴᴇ 🚫') # Custom Icon when Bot is down to show in Telegram.
+up_telegram = os.getenv('UP_TELEGRAM', 'Online ✅') # Custom Icon when Bot is up to show in Telegram.
+down_telegram = os.getenv('DOWN_TELEGRAM', 'Offline 🚫') # Custom Icon when Bot is down to show in Telegram.
 
 # print some information
 def display():
