@@ -31,7 +31,7 @@ all_mixed_ids = os.getenv('IDS', None) # All Chat IDs along with message IDs (Te
 
 # Optional :-
 file_name = os.getenv('FILE_NAME', 'README.md') # filename is case sensitive.
-edit_in_repo = os.getenv('EDIT_IN_REPO', 'true')  # If you want to edit status in GitHub Repo, set it to True else False.
+edit_in_repo = os.getenv('EDIT_IN_REPO', 'false')  # If you want to edit status in GitHub Repo, set it to True else False.
 edit_in_telegram = os.getenv('EDIT_IN_TELEGRAM', 'true') # If you want to edit status in Telegram, set it to True else False
 start_text = "💠 **Y͟a͟s͟i͟r͟P͟e͟d͟i͟a͟ B͟o͟t͟ S͟t͟a͟t͟u͟s͟**\n" # default for start_message.
 start_message = os.getenv('START_MESSAGE', start_text) # text before the status to show.
